@@ -1,17 +1,37 @@
 ﻿using BunifuAnimatorNS;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PowerPoint
 {
     public partial class TransitionControl : UserControl
     {
+        public bool transitionStarted = false;
+
+
         public TransitionControl()
         {
             InitializeComponent();
             pictureBox1.Controls.Add(pushTransitionLBL);
             pictureBox1.Controls.Add(cutTransitionLBL);
             pictureBox1.Controls.Add(wipeTransitionLBL);
+            pictureBox1.Controls.Add(previewLBL);
+            pictureBox1.Controls.Add(coverLBL);
+            pictureBox1.Controls.Add(drapeLBL);
+            pictureBox1.Controls.Add(FadeLBL);
+            pictureBox1.Controls.Add(fallOverLBL);
+            pictureBox1.Controls.Add(noneLBL);
+            pictureBox1.Controls.Add(randomBarLBL);
+            pictureBox1.Controls.Add(revealLBL);
+            pictureBox1.Controls.Add(shapeLBL);
+            pictureBox1.Controls.Add(splitLBL);
+            pictureBox1.Controls.Add(uncoverLBL);
+
+            pictureBox1.Controls.Add(flashLBL);
+
+
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -19,11 +39,45 @@ namespace PowerPoint
 
         }
 
-        private void myLabel1_Click(object sender, EventArgs e)
+        public void myLabel1_Click(object sender, EventArgs e)
         {
+            MainForm.Instance.wordTabControl.Hide();
+            MainForm.Instance.TopPanel.Hide();
+            MainForm.Instance.editorContainer.tableLayoutSlides.Hide();
+            MainForm.Instance.editorContainer.splitter1.Hide();
+            MainForm.Instance.wordTabControl.Hide();
 
-            BunifuTransition transition = new BunifuTransition();
-            transition.HideSync(Selected.selectedPanel, false, BunifuAnimatorNS.Animation.Leaf);
+            foreach (Control c in MainForm.Instance.editorContainer.Controls)
+            {
+                if (c is Panel && c.Tag != null)
+                {
+                    c.Visible = true;
+                    BunifuTransition transition = new BunifuTransition();
+                    transition.HideSync(c, false, BunifuAnimatorNS.Animation.Rotate);
+
+                    Task.Delay(2000).Wait();
+                    MessageBox.Show("loop 1 ");
+
+                    c.Visible = false;
+
+
+                    // c.Visible = false;   (int)c.Tag == tag
+                    if (false)
+                    {
+                        //c.Dispose();
+                    }
+                }
+            }
+
+
+
+
+           
+
+            
+
+
+            MainForm.Instance.transitionCtrl.transitionStarted = true;
 
 
 
@@ -73,6 +127,17 @@ namespace PowerPoint
             zeroitAnimatorEdit1.TargetHeight = Selected.selectedPanel.Height;
             zeroitAnimatorEdit1.TargetWidth = Selected.selectedPanel.Width;
             zeroitAnimatorEdit1.Activate();
+        }
+
+        private void previewLBL_Click(object sender, EventArgs e)
+        {
+            Preview pre = new Preview();
+            pre.Show();
+        }
+
+        private void revealLBL_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

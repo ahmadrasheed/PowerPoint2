@@ -37,20 +37,43 @@ namespace PowerPoint
             BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransitionControl));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.wipeTransitionLBL = new PowerPoint.MyLabel();
-            this.cutTransitionLBL = new PowerPoint.MyLabel();
-            this.pushTransitionLBL = new PowerPoint.MyLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.zeroitAnimatorEdit1 = new Zeroit.Framework.Transitions.AnimatorWithEditor.ZeroitAnimatorEdit(this.components);
             this.zeroitOJAnim1 = new Zeroit.Framework.Transitions.ZeroitOJAnim();
             this.bunifuTransition2 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.previewLBL = new PowerPoint.MyLabel();
+            this.wipeTransitionLBL = new PowerPoint.MyLabel();
+            this.cutTransitionLBL = new PowerPoint.MyLabel();
+            this.pushTransitionLBL = new PowerPoint.MyLabel();
+            this.FadeLBL = new PowerPoint.MyLabel();
+            this.splitLBL = new PowerPoint.MyLabel();
+            this.revealLBL = new PowerPoint.MyLabel();
+            this.randomBarLBL = new PowerPoint.MyLabel();
+            this.shapeLBL = new PowerPoint.MyLabel();
+            this.uncoverLBL = new PowerPoint.MyLabel();
+            this.coverLBL = new PowerPoint.MyLabel();
+            this.flashLBL = new PowerPoint.MyLabel();
+            this.fallOverLBL = new PowerPoint.MyLabel();
+            this.drapeLBL = new PowerPoint.MyLabel();
+            this.noneLBL = new PowerPoint.MyLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.noneLBL);
+            this.panel1.Controls.Add(this.drapeLBL);
+            this.panel1.Controls.Add(this.fallOverLBL);
+            this.panel1.Controls.Add(this.flashLBL);
+            this.panel1.Controls.Add(this.coverLBL);
+            this.panel1.Controls.Add(this.uncoverLBL);
+            this.panel1.Controls.Add(this.shapeLBL);
+            this.panel1.Controls.Add(this.randomBarLBL);
+            this.panel1.Controls.Add(this.revealLBL);
+            this.panel1.Controls.Add(this.splitLBL);
+            this.panel1.Controls.Add(this.FadeLBL);
             this.panel1.Controls.Add(this.wipeTransitionLBL);
             this.panel1.Controls.Add(this.cutTransitionLBL);
             this.panel1.Controls.Add(this.pushTransitionLBL);
@@ -62,57 +85,6 @@ namespace PowerPoint
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1956, 222);
             this.panel1.TabIndex = 0;
-            // 
-            // wipeTransitionLBL
-            // 
-            this.wipeTransitionLBL.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.wipeTransitionLBL, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.wipeTransitionLBL, BunifuAnimatorNS.DecorationType.None);
-            this.zeroitAnimatorEdit1.SetDecoration(this.wipeTransitionLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
-            this.wipeTransitionLBL.Location = new System.Drawing.Point(606, 32);
-            this.wipeTransitionLBL.Name = "wipeTransitionLBL";
-            this.wipeTransitionLBL.Size = new System.Drawing.Size(93, 100);
-            this.wipeTransitionLBL.TabIndex = 3;
-            this.wipeTransitionLBL.Click += new System.EventHandler(this.myLabel2_Click);
-            // 
-            // cutTransitionLBL
-            // 
-            this.cutTransitionLBL.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.cutTransitionLBL, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.cutTransitionLBL, BunifuAnimatorNS.DecorationType.None);
-            this.zeroitAnimatorEdit1.SetDecoration(this.cutTransitionLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
-            this.cutTransitionLBL.Location = new System.Drawing.Point(234, 32);
-            this.cutTransitionLBL.Name = "cutTransitionLBL";
-            this.cutTransitionLBL.Size = new System.Drawing.Size(93, 100);
-            this.cutTransitionLBL.TabIndex = 2;
-            this.cutTransitionLBL.Click += new System.EventHandler(this.myLabel1_Click);
-            // 
-            // pushTransitionLBL
-            // 
-            this.pushTransitionLBL.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.pushTransitionLBL, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.pushTransitionLBL, BunifuAnimatorNS.DecorationType.None);
-            this.zeroitAnimatorEdit1.SetDecoration(this.pushTransitionLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
-            this.pushTransitionLBL.Location = new System.Drawing.Point(478, 32);
-            this.pushTransitionLBL.Name = "pushTransitionLBL";
-            this.pushTransitionLBL.Size = new System.Drawing.Size(93, 100);
-            this.pushTransitionLBL.TabIndex = 1;
-            this.pushTransitionLBL.Click += new System.EventHandler(this.pushTransitionLBL_Click);
-            // 
-            // pictureBox1
-            // 
-            this.bunifuTransition1.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.zeroitAnimatorEdit1.SetDecoration(this.pictureBox1, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::PowerPoint.Properties.Resources.Transition;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1956, 222);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // zeroitAnimatorEdit1
             // 
@@ -151,7 +123,7 @@ namespace PowerPoint
             this.zeroitOJAnim1.FormAnimationDelay = 50;
             this.zeroitOJAnim1.KeepColor = true;
             this.zeroitOJAnim1.LowerSpeedLimit = 1;
-            this.zeroitOJAnim1.StandardAnimation = Zeroit.Framework.Transitions.ZeroitOJAnim.ZeroitObjectStandardAnimation.ShootRight;
+            this.zeroitOJAnim1.StandardAnimation = Zeroit.Framework.Transitions.ZeroitOJAnim.ZeroitObjectStandardAnimation.SlideUp;
             this.zeroitOJAnim1.StandardHopDelay = 100;
             this.zeroitOJAnim1.StandardShootDelay = 50;
             this.zeroitOJAnim1.StandardSlideDelay = 40;
@@ -202,10 +174,196 @@ namespace PowerPoint
             animation1.TransparencyCoeff = 1F;
             this.bunifuTransition1.DefaultAnimation = animation1;
             // 
+            // pictureBox1
+            // 
+            this.bunifuTransition1.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.pictureBox1, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::PowerPoint.Properties.Resources.Transition;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1956, 222);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // previewLBL
+            // 
+            this.previewLBL.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.previewLBL, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.previewLBL, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.previewLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.previewLBL.Location = new System.Drawing.Point(3, 19);
+            this.previewLBL.Name = "previewLBL";
+            this.previewLBL.Size = new System.Drawing.Size(93, 127);
+            this.previewLBL.TabIndex = 4;
+            this.previewLBL.Click += new System.EventHandler(this.previewLBL_Click);
+            // 
+            // wipeTransitionLBL
+            // 
+            this.wipeTransitionLBL.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.wipeTransitionLBL, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.wipeTransitionLBL, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.wipeTransitionLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.wipeTransitionLBL.Location = new System.Drawing.Point(606, 32);
+            this.wipeTransitionLBL.Name = "wipeTransitionLBL";
+            this.wipeTransitionLBL.Size = new System.Drawing.Size(93, 100);
+            this.wipeTransitionLBL.TabIndex = 3;
+            this.wipeTransitionLBL.Click += new System.EventHandler(this.myLabel2_Click);
+            // 
+            // cutTransitionLBL
+            // 
+            this.cutTransitionLBL.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.cutTransitionLBL, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.cutTransitionLBL, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.cutTransitionLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.cutTransitionLBL.Location = new System.Drawing.Point(242, 32);
+            this.cutTransitionLBL.Name = "cutTransitionLBL";
+            this.cutTransitionLBL.Size = new System.Drawing.Size(93, 100);
+            this.cutTransitionLBL.TabIndex = 2;
+            this.cutTransitionLBL.Click += new System.EventHandler(this.myLabel1_Click);
+            // 
+            // pushTransitionLBL
+            // 
+            this.pushTransitionLBL.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.pushTransitionLBL, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.pushTransitionLBL, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.pushTransitionLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.pushTransitionLBL.Location = new System.Drawing.Point(478, 32);
+            this.pushTransitionLBL.Name = "pushTransitionLBL";
+            this.pushTransitionLBL.Size = new System.Drawing.Size(93, 100);
+            this.pushTransitionLBL.TabIndex = 1;
+            this.pushTransitionLBL.Click += new System.EventHandler(this.pushTransitionLBL_Click);
+            // 
+            // FadeLBL
+            // 
+            this.FadeLBL.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.FadeLBL, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.FadeLBL, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.FadeLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.FadeLBL.Location = new System.Drawing.Point(351, 32);
+            this.FadeLBL.Name = "FadeLBL";
+            this.FadeLBL.Size = new System.Drawing.Size(93, 100);
+            this.FadeLBL.TabIndex = 4;
+            // 
+            // splitLBL
+            // 
+            this.splitLBL.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.splitLBL, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.splitLBL, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.splitLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.splitLBL.Location = new System.Drawing.Point(726, 32);
+            this.splitLBL.Name = "splitLBL";
+            this.splitLBL.Size = new System.Drawing.Size(93, 100);
+            this.splitLBL.TabIndex = 5;
+            // 
+            // revealLBL
+            // 
+            this.revealLBL.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.revealLBL, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.revealLBL, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.revealLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.revealLBL.Location = new System.Drawing.Point(850, 32);
+            this.revealLBL.Name = "revealLBL";
+            this.revealLBL.Size = new System.Drawing.Size(93, 100);
+            this.revealLBL.TabIndex = 6;
+            this.revealLBL.Click += new System.EventHandler(this.revealLBL_Click);
+            // 
+            // randomBarLBL
+            // 
+            this.randomBarLBL.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.randomBarLBL, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.randomBarLBL, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.randomBarLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.randomBarLBL.Location = new System.Drawing.Point(972, 32);
+            this.randomBarLBL.Name = "randomBarLBL";
+            this.randomBarLBL.Size = new System.Drawing.Size(93, 100);
+            this.randomBarLBL.TabIndex = 7;
+            // 
+            // shapeLBL
+            // 
+            this.shapeLBL.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.shapeLBL, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.shapeLBL, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.shapeLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.shapeLBL.Location = new System.Drawing.Point(1092, 32);
+            this.shapeLBL.Name = "shapeLBL";
+            this.shapeLBL.Size = new System.Drawing.Size(93, 100);
+            this.shapeLBL.TabIndex = 8;
+            // 
+            // uncoverLBL
+            // 
+            this.uncoverLBL.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.uncoverLBL, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.uncoverLBL, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.uncoverLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.uncoverLBL.Location = new System.Drawing.Point(1221, 32);
+            this.uncoverLBL.Name = "uncoverLBL";
+            this.uncoverLBL.Size = new System.Drawing.Size(93, 100);
+            this.uncoverLBL.TabIndex = 9;
+            // 
+            // coverLBL
+            // 
+            this.coverLBL.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.coverLBL, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.coverLBL, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.coverLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.coverLBL.Location = new System.Drawing.Point(1348, 32);
+            this.coverLBL.Name = "coverLBL";
+            this.coverLBL.Size = new System.Drawing.Size(93, 100);
+            this.coverLBL.TabIndex = 10;
+            // 
+            // flashLBL
+            // 
+            this.flashLBL.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.flashLBL, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.flashLBL, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.flashLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.flashLBL.Location = new System.Drawing.Point(1456, 32);
+            this.flashLBL.Name = "flashLBL";
+            this.flashLBL.Size = new System.Drawing.Size(93, 100);
+            this.flashLBL.TabIndex = 11;
+            // 
+            // fallOverLBL
+            // 
+            this.fallOverLBL.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.fallOverLBL, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.fallOverLBL, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.fallOverLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.fallOverLBL.Location = new System.Drawing.Point(1589, 32);
+            this.fallOverLBL.Name = "fallOverLBL";
+            this.fallOverLBL.Size = new System.Drawing.Size(93, 100);
+            this.fallOverLBL.TabIndex = 12;
+            // 
+            // drapeLBL
+            // 
+            this.drapeLBL.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.drapeLBL, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.drapeLBL, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.drapeLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.drapeLBL.Location = new System.Drawing.Point(1706, 32);
+            this.drapeLBL.Name = "drapeLBL";
+            this.drapeLBL.Size = new System.Drawing.Size(93, 100);
+            this.drapeLBL.TabIndex = 13;
+            // 
+            // noneLBL
+            // 
+            this.noneLBL.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.noneLBL, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.noneLBL, BunifuAnimatorNS.DecorationType.None);
+            this.zeroitAnimatorEdit1.SetDecoration(this.noneLBL, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
+            this.noneLBL.Location = new System.Drawing.Point(112, 32);
+            this.noneLBL.Name = "noneLBL";
+            this.noneLBL.Size = new System.Drawing.Size(93, 100);
+            this.noneLBL.TabIndex = 14;
+            // 
             // TransitionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.previewLBL);
             this.Controls.Add(this.panel1);
             this.bunifuTransition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.zeroitAnimatorEdit1.SetDecoration(this, Zeroit.Framework.Transitions.AnimatorWithEditor.DecorationType.None);
@@ -226,8 +384,20 @@ namespace PowerPoint
         private MyLabel wipeTransitionLBL;
         private MyLabel cutTransitionLBL;
         private Zeroit.Framework.Transitions.AnimatorWithEditor.ZeroitAnimatorEdit zeroitAnimatorEdit1;
-        private BunifuTransition bunifuTransition1;
         private BunifuTransition bunifuTransition2;
         private Zeroit.Framework.Transitions.ZeroitOJAnim zeroitOJAnim1;
+        private MyLabel previewLBL;
+        public BunifuTransition bunifuTransition1;
+        private MyLabel revealLBL;
+        private MyLabel splitLBL;
+        private MyLabel FadeLBL;
+        private MyLabel noneLBL;
+        private MyLabel drapeLBL;
+        private MyLabel fallOverLBL;
+        private MyLabel flashLBL;
+        private MyLabel coverLBL;
+        private MyLabel uncoverLBL;
+        private MyLabel shapeLBL;
+        private MyLabel randomBarLBL;
     }
 }

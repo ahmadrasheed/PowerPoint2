@@ -111,14 +111,70 @@ namespace PowerPoint
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            
-            Selected.selectedControl.Dispose();
+
+            //Selected.selectedControl.Dispose();
+            if(Selected.selectedPictureBox.Parent!=null)
+            Selected.selectedPictureBox.Parent.Dispose();
 
         }
 
         private void openAhmadInsertToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
+            // display image in picture box  
+            PictureBox pic = new PictureBox();
+            //pic = Selected.selectedPictureBox;
+            pic.Image = Selected.selectedPictureBox.Image;
+            // image file path  
+            //textBox1.Text = open.FileName;
+
+
+
+            //pic.Size = new System.Drawing.Size(600, 600);
+
+            //t.Multiline = true;
+
+            pic.SizeMode = PictureBoxSizeMode.StretchImage;
+            pic.Dock = System.Windows.Forms.DockStyle.Fill;
+            pic.Margin = new System.Windows.Forms.Padding(5);
+            //pic.BackColor = Color.White;
+            pic.Location = Selected.selectedPictureBox.Location;
+            pic.BorderStyle = BorderStyle.None;
+            TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
+            //tableLayoutPanel1=Selected.selectedPictureBox.Parent as TableLayoutPanel;
+            tableLayoutPanel1.Size = Selected.selectedPictureBox.Parent.Size;
+            tableLayoutPanel1.Controls.Add(pic, 0, 0);
+
+
+            //MainForm.Instance.editorContainer.panel2.Controls.Add(tableLayoutPanel1);
+            Selected.selectedPanel.Controls.Add(tableLayoutPanel1);
+            //MainForm.Instance.editorContainer.panel2.Controls.SetChildIndex(tableLayoutPanel1, 0);
+
+            //MainForm.Instance.editorContainer.panel2.Controls.Add(pic);
+
+
+            xLocation += 50; yLocation += 50;
+
+            pic.BorderStyle = BorderStyle.None;
+            pic.Click += T_Click;
+            pic.MouseDown += T_MouseDown;
+            pic.MouseHover += T_MouseHover;
+            pic.MouseLeave += T_MouseLeave;
+            //MainForm.Instance.editorContainer.panel2.Controls.Add(t);
+
+            Selected.selectedPictureBox = pic;
+
+            pic.ContextMenuStrip = contextMenuStrip1;
+            //MainForm.Instance.editorContainer.panel2.Controls.Add(tableLayoutPanel1);
+            ControlMoverOrResizer.Init(tableLayoutPanel1);
+            ControlMoverOrResizer.Init(pic);
+            ControlMoverOrResizer.Init(pic, tableLayoutPanel1);
+
+
+            MessageBox.Show("copy image done");
+
+
+
 
         }
 

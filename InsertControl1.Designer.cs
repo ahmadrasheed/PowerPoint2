@@ -46,19 +46,19 @@
             this.openAhmadInsertToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(207, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(271, 114);
             // 
             // openAhmadInsertToolStripMenuItem
             // 
             this.openAhmadInsertToolStripMenuItem.Name = "openAhmadInsertToolStripMenuItem";
-            this.openAhmadInsertToolStripMenuItem.Size = new System.Drawing.Size(206, 36);
-            this.openAhmadInsertToolStripMenuItem.Text = "copy  ahmad";
+            this.openAhmadInsertToolStripMenuItem.Size = new System.Drawing.Size(270, 36);
+            this.openAhmadInsertToolStripMenuItem.Text = "copy  ";
             this.openAhmadInsertToolStripMenuItem.Click += new System.EventHandler(this.openAhmadInsertToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(206, 36);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(270, 36);
             this.deleteToolStripMenuItem.Text = "delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 

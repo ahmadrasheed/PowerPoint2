@@ -130,6 +130,8 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "EditorContainer";
             this.Size = new System.Drawing.Size(1681, 1375);
+            this.Load += new System.EventHandler(this.EditorContainer_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.EditorContainer_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditorContainer_KeyDown);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EditorContainer_MouseClick);
             this.contextMenuStrip1.ResumeLayout(false);

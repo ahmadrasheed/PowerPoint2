@@ -18,6 +18,7 @@ namespace PowerPoint
 {
     public partial class MainForm : Form
     {
+        public TransitionControl transitionCtrl;
 
         static MainForm _obj;
         public static MainForm Instance
@@ -696,7 +697,7 @@ namespace PowerPoint
             if (addedControlType != CTRLTypes.TransitionType)
             {
                 wordTabControl.tabPanel.Controls.Clear();
-                TransitionControl transitionCtrl = new TransitionControl();
+                transitionCtrl = new TransitionControl();
                 transitionCtrl.Location = new Point(1, 1);
                 transitionCtrl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
                 wordTabControl.tabPanel.Controls.Add(transitionCtrl);

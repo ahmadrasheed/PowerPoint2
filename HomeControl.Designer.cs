@@ -46,14 +46,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.newSlidePictureBox = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.colorPictureBox = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.copySlideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteSlideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shapeOutlineColorLBL = new PowerPoint.MyLabel();
             this.shapeColorFillLBL = new PowerPoint.MyLabel();
             this.numberBulletLBL = new PowerPoint.MyLabel();
@@ -65,6 +57,13 @@
             this.centerLBL = new PowerPoint.MyLabel();
             this.rightLBL = new PowerPoint.MyLabel();
             this.insertTextBoxLBL = new PowerPoint.MyLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.colorPictureBox = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteSlideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newSlidePictureBox)).BeginInit();
@@ -323,97 +322,8 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(561, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1764, 241);
+            this.panel4.Size = new System.Drawing.Size(1764, 231);
             this.panel4.TabIndex = 39;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::PowerPoint.Properties.Resources.HomeSmaller1;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::PowerPoint.Properties.Resources.Home21;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1764, 241);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // colorPictureBox
-            // 
-            this.colorPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.colorPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.colorPictureBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.colorPictureBox.Image = global::PowerPoint.Properties.Resources.icons8_text_color_48;
-            this.colorPictureBox.Location = new System.Drawing.Point(406, 86);
-            this.colorPictureBox.Name = "colorPictureBox";
-            this.colorPictureBox.Size = new System.Drawing.Size(39, 39);
-            this.colorPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.colorPictureBox.TabIndex = 30;
-            this.colorPictureBox.TabStop = false;
-            this.colorPictureBox.Click += new System.EventHandler(this.colorPictureBox_Click);
-            this.colorPictureBox.MouseLeave += new System.EventHandler(this.colorPictureBox_MouseLeave);
-            this.colorPictureBox.MouseHover += new System.EventHandler(this.colorPictureBox_MouseHover);
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = global::PowerPoint.Properties.Resources.paste;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(100, 106);
-            this.button4.Margin = new System.Windows.Forms.Padding(5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(43, 43);
-            this.button4.TabIndex = 14;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::PowerPoint.Properties.Resources.copy;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(100, 57);
-            this.button3.Margin = new System.Windows.Forms.Padding(5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(43, 44);
-            this.button3.TabIndex = 13;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::PowerPoint.Properties.Resources.cut;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(100, 5);
-            this.button2.Margin = new System.Windows.Forms.Padding(5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(43, 44);
-            this.button2.TabIndex = 12;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(28, 28);
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.copySlideToolStripMenuItem,
-            this.deleteSlideToolStripMenuItem});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(271, 114);
-            // 
-            // copySlideToolStripMenuItem
-            // 
-            this.copySlideToolStripMenuItem.Name = "copySlideToolStripMenuItem";
-            this.copySlideToolStripMenuItem.Size = new System.Drawing.Size(270, 36);
-            this.copySlideToolStripMenuItem.Text = "copy slide";
-            this.copySlideToolStripMenuItem.Click += new System.EventHandler(this.copySlideToolStripMenuItem_Click);
-            // 
-            // deleteSlideToolStripMenuItem
-            // 
-            this.deleteSlideToolStripMenuItem.Name = "deleteSlideToolStripMenuItem";
-            this.deleteSlideToolStripMenuItem.Size = new System.Drawing.Size(270, 36);
-            this.deleteSlideToolStripMenuItem.Text = "delete slide";
-            this.deleteSlideToolStripMenuItem.Click += new System.EventHandler(this.deleteSlideToolStripMenuItem_Click);
             // 
             // shapeOutlineColorLBL
             // 
@@ -514,6 +424,88 @@
             this.insertTextBoxLBL.TabIndex = 30;
             this.insertTextBoxLBL.Click += new System.EventHandler(this.insertTextBoxLBL_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::PowerPoint.Properties.Resources.HomeSmaller1;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::PowerPoint.Properties.Resources.Home21;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1764, 231);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // colorPictureBox
+            // 
+            this.colorPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.colorPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.colorPictureBox.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.colorPictureBox.Image = global::PowerPoint.Properties.Resources.icons8_text_color_48;
+            this.colorPictureBox.Location = new System.Drawing.Point(406, 86);
+            this.colorPictureBox.Name = "colorPictureBox";
+            this.colorPictureBox.Size = new System.Drawing.Size(39, 39);
+            this.colorPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.colorPictureBox.TabIndex = 30;
+            this.colorPictureBox.TabStop = false;
+            this.colorPictureBox.Click += new System.EventHandler(this.colorPictureBox_Click);
+            this.colorPictureBox.MouseLeave += new System.EventHandler(this.colorPictureBox_MouseLeave);
+            this.colorPictureBox.MouseHover += new System.EventHandler(this.colorPictureBox_MouseHover);
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::PowerPoint.Properties.Resources.paste;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(100, 106);
+            this.button4.Margin = new System.Windows.Forms.Padding(5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(43, 43);
+            this.button4.TabIndex = 14;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::PowerPoint.Properties.Resources.copy;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(100, 57);
+            this.button3.Margin = new System.Windows.Forms.Padding(5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(43, 44);
+            this.button3.TabIndex = 13;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::PowerPoint.Properties.Resources.cut;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(100, 5);
+            this.button2.Margin = new System.Windows.Forms.Padding(5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(43, 44);
+            this.button2.TabIndex = 12;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteSlideToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(192, 40);
+            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
+            // 
+            // deleteSlideToolStripMenuItem
+            // 
+            this.deleteSlideToolStripMenuItem.Name = "deleteSlideToolStripMenuItem";
+            this.deleteSlideToolStripMenuItem.Size = new System.Drawing.Size(191, 36);
+            this.deleteSlideToolStripMenuItem.Text = "delete slide";
+            this.deleteSlideToolStripMenuItem.Click += new System.EventHandler(this.deleteSlideToolStripMenuItem_Click);
+            // 
             // HomeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(168F, 168F);
@@ -537,7 +529,7 @@
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "HomeControl";
-            this.Size = new System.Drawing.Size(2325, 241);
+            this.Size = new System.Drawing.Size(2325, 231);
             this.Load += new System.EventHandler(this.HomeControl_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -587,7 +579,6 @@
         private MyLabel rightLBL;
         private MyLabel insertTextBoxLBL;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem copySlideToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteSlideToolStripMenuItem;
     }
 }

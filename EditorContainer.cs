@@ -44,46 +44,50 @@ namespace PowerPoint
 
         private void EditorContainer_MouseClick(object sender, MouseEventArgs e)
         {
-           // MessageBox.Show("clicked EditoContainer pressed");
+            if (MainForm.Instance.transitionCtrl.transitionStarted)
+            {
+                MessageBox.Show("editor mouse click activated");
+                MainForm.Instance.wordTabControl.Show();
+                MainForm.Instance.TopPanel.Show();
+                MainForm.Instance.editorContainer.tableLayoutSlides.Show();
+                MainForm.Instance.editorContainer.splitter1.Show();
+                MainForm.Instance.wordTabControl.Show();
+
+                MainForm.Instance.transitionCtrl.transitionStarted = false;
+
+
+                if (Selected.selectedPanel != null)
+                {
+                    Selected.selectedPanel.Visible = true;
+                    MainForm.Instance.editorContainer.Controls.SetChildIndex(Selected.selectedPanel, 0);
+                }
+
+                if (MainForm.Instance.transitionCtrl.transitionStarted)
+                {
+
+                   
+
+                }
+
+
+
+
+
+
+            }
         }
 
-        private void panel2_Click(object sender, EventArgs e)
-        {
-            
-        }
 
-      
-
-       
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //panel2.Controls.Clear();
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void EditorContainer_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void panel2_3_Paint(object sender, PaintEventArgs e)
+        private void EditorContainer_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show("EditorContainer just painted");
 
-        }
-
-        private void splitContainer1_Panel2_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
+        
         }
     }
 }

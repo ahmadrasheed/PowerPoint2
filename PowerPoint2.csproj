@@ -179,6 +179,12 @@
     <Compile Include="FileOptionsControl.Designer.cs">
       <DependentUpon>FileOptionsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preview.Designer.cs">
+      <DependentUpon>Preview.cs</DependentUpon>
+    </Compile>
     <Compile Include="SlidePreview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FileOptionsControl.resx">
       <DependentUpon>FileOptionsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preview.resx">
+      <DependentUpon>Preview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SlidePreview.resx">
       <DependentUpon>SlidePreview.cs</DependentUpon>

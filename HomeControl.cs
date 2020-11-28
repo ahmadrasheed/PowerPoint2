@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-
-
 // ahmad rasheed algeboory 07725869606
 namespace PowerPoint
 {
@@ -54,8 +52,6 @@ namespace PowerPoint
             p.Click += P_Click;
             
 
-            
-
 
             int rowCount = MainForm.Instance.editorContainer.tableLayoutSlides.RowCount;
             p.Tag = rowCount;
@@ -76,11 +72,6 @@ namespace PowerPoint
             Selected.selectedPanel.DrawToBitmap(bb, new Rectangle(0, 0, bb.Width, bb.Height));
             b.Image = bb;
 
-
-
-            //b.FlatStyle = FlatStyle.Flat;
-            //b.FlatAppearance.BorderColor = Color.Red;
-            //b.FlatAppearance.BorderSize = 2;
             TableLayoutPanel Table = MainForm.Instance.editorContainer.tableLayoutSlides;
             Table.RowCount = Table.RowCount + 1;
             //b.Text = Table.RowCount.ToString();
@@ -89,7 +80,7 @@ namespace PowerPoint
             Selected.selectedSlidePictureBox = b;
 
 
-            b.Tag = rowCount;
+            b.Tag = rowCount; // ASSIGN a number to be used to selected this control which will be the same for panel
             b.Click += B_Click;
             //b.MinimumSize = new Size(150, 130);
             
@@ -101,7 +92,7 @@ namespace PowerPoint
 
             
         }
-        private void B_Click(object sender, EventArgs e)
+        public void B_Click(object sender, EventArgs e)
         {
             PictureBox b = (PictureBox)sender;
             Selected.selectedSlidePictureBox = b;
@@ -199,7 +190,12 @@ namespace PowerPoint
             //MessageBox.Show("ok");
             //MainForm.Instance.editorContainer.panel2.Controls.Add(tableLayoutPanel1);
 
-            xLocation += 50; yLocation += 50;
+            xLocation += 50; yLocation += 50;  
+            if (xLocation > 800)  // حتى لا يعبر حدود الصفحة عند اضافة العديد من مربعات النصوص
+            {
+                xLocation = 250;
+                yLocation = 40;
+            }
 
             t.BorderStyle = BorderStyle.None;
             t.Click += T_Click;
@@ -455,8 +451,8 @@ namespace PowerPoint
             Selected.selectedRichTextBox = (RichTextBoxEx)sender;
             Selected.selectedControl = (Control)sender;
 
-           //MainForm.Instance.editorContainer.panel2.Controls.SetChildIndex(Selected.selectedRichTextBox.Parent, 0);
-
+            //MainForm.Instance.editorContainer.se.Controls.SetChildIndex(Selected.selectedRichTextBox.Parent, 0);
+            Selected.selectedPanel.Controls.SetChildIndex(Selected.selectedRichTextBox.Parent,0);
 
         }
 
@@ -731,15 +727,12 @@ namespace PowerPoint
 
         private void copySlideToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+        
         }
 
         private void deleteSlideToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PictureBox b = Selected.selectedSlidePictureBox;
-            //PictureBox b = sender as PictureBox;
-
-
             int tag = (int)b.Tag;
             foreach (Control c in MainForm.Instance.editorContainer.Controls)
             {
@@ -748,21 +741,13 @@ namespace PowerPoint
                     // c.Visible = false;
                     if ((int)c.Tag == tag)
                     {
-                        //c.Dispose();
-                        //b.Dispose();
-                        //c.Visible = true;
                         c.Dispose();
-
-                        // Selected.selectedPanel = (Panel)c;
                     }
                 }
             }
 
-
             int RowCount = MainForm.Instance.editorContainer.tableLayoutSlides.RowCount;
             int Rowindex= MainForm.Instance.editorContainer.tableLayoutSlides.GetPositionFromControl(b).Row;
-
-            MessageBox.Show("1-- Rowindex is" + Rowindex + " Rowcount is " + RowCount);
 
             if (Rowindex >= RowCount)
             {
@@ -776,40 +761,26 @@ namespace PowerPoint
             {
                 for (int i = Rowindex + 1; i < RowCount; i++)
                 {
-
-
                     var cc = MainForm.Instance.editorContainer.tableLayoutSlides.GetControlFromPosition(0, i);
                     if (cc != null)
                     {
                         MainForm.Instance.editorContainer.tableLayoutSlides.SetRow(cc, i - 1);
                     }
-
                 }
 
             }
 
-            MessageBox.Show("2---Rowindex is"+Rowindex+ " Rowcount is " +RowCount);
             if (Rowindex == RowCount - 1)
             {
-                MessageBox.Show("yes row is at end");
                 Rowindex--;
             }
                 
-            
             MainForm.Instance.editorContainer.tableLayoutSlides.RowStyles.RemoveAt(RowCount - 1);
 
-
-            //Rowindex>0 && Rowindex < RowCount-1
-            if (true )
-            {
-
-                MessageBox.Show("first if  "+Rowindex.ToString());
                 if (RowCount > 2)
                 {
                     Selected.selectedSlidePictureBox = (PictureBox)MainForm.Instance.editorContainer.tableLayoutSlides.GetControlFromPosition(0, Rowindex);
-                    MessageBox.Show(Selected.selectedSlidePictureBox.Width.ToString());
                     tag = (int)Selected.selectedSlidePictureBox.Tag;
-                    MessageBox.Show("tag is " + tag.ToString());
                     foreach (Control c in MainForm.Instance.editorContainer.Controls)
                     {
                         if (c is Panel && c.Tag != null)
@@ -820,51 +791,18 @@ namespace PowerPoint
                                 //c.Dispose();
                                 //b.Dispose();
                                 c.Visible = true;
-
                                 Selected.selectedPanel = (Panel)c;
                                 MainForm.Instance.editorContainer.Controls.SetChildIndex(Selected.selectedPanel, 0);
-
                             }
                         }
                     }
-
-
                 }
-            }
-
-
-            //Rowindex == RowCount-1
-            if (false)
-            {
-                Selected.selectedSlidePictureBox = (PictureBox)MainForm.Instance.editorContainer.tableLayoutSlides.GetControlFromPosition(0, Rowindex);
-                MessageBox.Show(Selected.selectedSlidePictureBox.Width.ToString());
-                tag = (int)Selected.selectedSlidePictureBox.Tag;
-                MessageBox.Show(tag.ToString());
-                foreach (Control c in MainForm.Instance.editorContainer.Controls)
-                {
-                    if (c is Panel && c.Tag != null)
-                    {
-                        // c.Visible = false;
-                        if ((int)c.Tag == tag)
-                        {
-                            //c.Dispose();
-                            //b.Dispose();
-                            c.Visible = true;
-
-                            Selected.selectedPanel = (Panel)c;
-                            MainForm.Instance.editorContainer.Controls.SetChildIndex(Selected.selectedPanel, 0);
-
-                        }
-                    }
-                }
-
-
-
-            }
-
 
             MainForm.Instance.editorContainer.tableLayoutSlides.RowCount--;
+        }
 
+        private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
+        {
 
         }
     }

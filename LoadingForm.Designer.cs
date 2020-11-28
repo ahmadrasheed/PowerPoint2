@@ -62,11 +62,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Tahoma", 14.14286F);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(137, 284);
+            this.label4.Location = new System.Drawing.Point(79, 274);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(500, 33);
+            this.label4.Size = new System.Drawing.Size(636, 41);
             this.label4.TabIndex = 5;
             this.label4.Text = "مديرية تربية نينوى/ شعبة التعليم الالكتروني";
             // 
@@ -127,7 +127,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(99, 130);
+            this.label2.Location = new System.Drawing.Point(121, 118);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(584, 137);
