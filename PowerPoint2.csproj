@@ -167,6 +167,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ControlMoverOrResizer.cs" />
+    <Compile Include="DesignControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DesignControl.Designer.cs">
+      <DependentUpon>DesignControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditorContainer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -298,6 +304,9 @@
     <Compile Include="TransitionControll.Designer.cs">
       <DependentUpon>TransitionControll.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DesignControl.resx">
+      <DependentUpon>DesignControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditorContainer.resx">
       <DependentUpon>EditorContainer.cs</DependentUpon>
     </EmbeddedResource>
@@ -450,6 +459,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\insert.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Design.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greenBackground+.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greenBackground2..JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blueOceanBackground.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maroonBackground.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planetBackground.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redMovingBackground.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteBackground.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woodBackground.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

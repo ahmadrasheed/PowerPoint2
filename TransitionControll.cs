@@ -53,7 +53,8 @@ namespace PowerPoint
                 {
                     c.Visible = true;
                     BunifuTransition transition = new BunifuTransition();
-                    transition.HideSync(c, false, BunifuAnimatorNS.Animation.Rotate);
+                    transition.HideSync(c, false, BunifuAnimatorNS.Animation.Mosaic);
+                    transition.ShowSync(c, false, BunifuAnimatorNS.Animation.Mosaic);
 
                     Task.Delay(2000).Wait();
                     MessageBox.Show("loop 1 ");

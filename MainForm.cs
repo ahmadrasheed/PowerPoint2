@@ -19,6 +19,7 @@ namespace PowerPoint
     public partial class MainForm : Form
     {
         public TransitionControl transitionCtrl;
+        public DesignControl designCtrl;
 
         static MainForm _obj;
         public static MainForm Instance
@@ -712,6 +713,11 @@ namespace PowerPoint
             if (addedControlType != CTRLTypes.DesignType)
             {
                 wordTabControl.tabPanel.Controls.Clear();
+                designCtrl = new DesignControl();
+                designCtrl.Location = new Point(1,1);
+                designCtrl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+                wordTabControl.tabPanel.Controls.Add(designCtrl);
+               
                 addedControlType = CTRLTypes.DesignType;
                 
             }
