@@ -36,7 +36,7 @@ namespace PowerPoint
 
             if (Selected.selectedPanel==null)
             {
-                newSlide();
+                newSlide(); // حتى لا يضيف اكثر من بانل عند تحديث فورم التابات
             }
             
 
@@ -52,6 +52,7 @@ namespace PowerPoint
             p.Size = new Size(200, 300);
             
             p.Click += P_Click;
+            
 
             
 
@@ -60,6 +61,7 @@ namespace PowerPoint
             p.Tag = rowCount;
             MainForm.Instance.editorContainer.Controls.Add(p);
             Selected.selectedPanel = p;
+            MainForm.Instance.editorContainer.Controls.SetChildIndex(Selected.selectedPanel, 0);
 
 
 
@@ -68,20 +70,24 @@ namespace PowerPoint
             b.BackColor = Color.Red;
             b.BorderStyle = BorderStyle.Fixed3D;
             b.SizeMode = PictureBoxSizeMode.StretchImage;
+            b.ContextMenuStrip = contextMenuStrip2;
 
             Bitmap bb = new Bitmap(Selected.selectedPanel.Width, Selected.selectedPanel.Height);
             Selected.selectedPanel.DrawToBitmap(bb, new Rectangle(0, 0, bb.Width, bb.Height));
             b.Image = bb;
 
 
+
             //b.FlatStyle = FlatStyle.Flat;
             //b.FlatAppearance.BorderColor = Color.Red;
             //b.FlatAppearance.BorderSize = 2;
             TableLayoutPanel Table = MainForm.Instance.editorContainer.tableLayoutSlides;
+            Table.RowCount = Table.RowCount + 1;
             //b.Text = Table.RowCount.ToString();
-            
+
 
             Selected.selectedSlidePictureBox = b;
+
 
             b.Tag = rowCount;
             b.Click += B_Click;
@@ -89,7 +95,7 @@ namespace PowerPoint
             
             Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             Table.Controls.Add(b, 0, Table.RowCount - 1);
-            Table.RowCount = Table.RowCount + 1;
+            
             Table.RowStyles[rowCount - 1].Height = 150;
             //Table.MaximumSize = new Size(Table.Width,Table.Height+150);
 
@@ -113,7 +119,7 @@ namespace PowerPoint
                         c.Visible = true;
 
                         Selected.selectedPanel = (Panel)c;
-                        // MainForm.Instance.editorContainer.Controls.SetChildIndex(Selected.selectedPanel, 0);
+                       
 
                     }
 
@@ -124,20 +130,45 @@ namespace PowerPoint
 
         private void P_Click(object sender, EventArgs e)
         {
-            Panel c = sender as Panel;
-            Selected.selectedSlidePictureBox.Image = screenShotControl(c);
+            //Panel c = sender as Panel;
+            if (screenShotControl(Selected.selectedPanel) != null) 
+            
+            {
+                Selected.selectedSlidePictureBox.Image = screenShotControl(Selected.selectedPanel);
+
+
+            }
 
         }
 
-        private static Bitmap screenShotControl(Control c)
+        private static Bitmap screenShotControl(Panel c)
         {
-            Bitmap b = new Bitmap(c.Width, c.Height);
-            c.DrawToBitmap(b, new Rectangle(0, 0, b.Width, b.Height));
+            Bitmap b;
+            
 
-            //Selected.selectedSlidePictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            //Selected.selectedSlidePictureBox.Image = b;
+            try
+            {
+                b = new Bitmap(c.Width, c.Height);
 
-            return b;
+                c.DrawToBitmap(b, new Rectangle(0, 0, b.Width, b.Height));
+
+                //Selected.selectedSlidePictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                //Selected.selectedSlidePictureBox.Image = b;
+
+                return b;
+            }
+            catch (Exception)
+            {
+               // b = new Bitmap(400, 400);
+               // MessageBox.Show("عذراً، حدث خطأ يرجى اعادة تشغيل البرنامج");
+
+               // screenShotControl(new Panel());
+                return null;
+            }
+
+           
+          
+           
         }
 
         public  void createRTB(Color backcolor,String text="",int x=100,int y=100) {
@@ -172,8 +203,11 @@ namespace PowerPoint
 
             t.BorderStyle = BorderStyle.None;
             t.Click += T_Click;
+            t.MouseHover += P_Click;
+            t.Click += P_Click;
             t.MouseDown += T_MouseDown;
             t.MouseHover += T_MouseHover;
+           
             t.MouseLeave += T_MouseLeave;
             //MainForm.Instance.editorContainer.panel2.Controls.Add(t);
            
@@ -653,8 +687,15 @@ namespace PowerPoint
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Selected.selectedControl.Parent.Dispose();
-            Selected.selectedControl.Dispose();
+
+
+            
+                Selected.selectedControl.Parent.Dispose();
+                Selected.selectedControl.Dispose();
+
+          
+                
+            
         }
 
         private void shapeColorFillLBL_Click(object sender, EventArgs e)
@@ -681,6 +722,150 @@ namespace PowerPoint
         private void newSlidePictureBox_Click(object sender, EventArgs e)
         {
             newSlide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void copySlideToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteSlideToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PictureBox b = Selected.selectedSlidePictureBox;
+            //PictureBox b = sender as PictureBox;
+
+
+            int tag = (int)b.Tag;
+            foreach (Control c in MainForm.Instance.editorContainer.Controls)
+            {
+                if (c is Panel && c.Tag != null)
+                {
+                    // c.Visible = false;
+                    if ((int)c.Tag == tag)
+                    {
+                        //c.Dispose();
+                        //b.Dispose();
+                        //c.Visible = true;
+                        c.Dispose();
+
+                        // Selected.selectedPanel = (Panel)c;
+                    }
+                }
+            }
+
+
+            int RowCount = MainForm.Instance.editorContainer.tableLayoutSlides.RowCount;
+            int Rowindex= MainForm.Instance.editorContainer.tableLayoutSlides.GetPositionFromControl(b).Row;
+
+            MessageBox.Show("1-- Rowindex is" + Rowindex + " Rowcount is " + RowCount);
+
+            if (Rowindex >= RowCount)
+            {
+                return; //get out 
+            }
+           
+                var control = MainForm.Instance.editorContainer.tableLayoutSlides.GetControlFromPosition(0, Rowindex);
+                MainForm.Instance.editorContainer.tableLayoutSlides.Controls.Remove(control);
+
+            if (Rowindex<RowCount-1) 
+            {
+                for (int i = Rowindex + 1; i < RowCount; i++)
+                {
+
+
+                    var cc = MainForm.Instance.editorContainer.tableLayoutSlides.GetControlFromPosition(0, i);
+                    if (cc != null)
+                    {
+                        MainForm.Instance.editorContainer.tableLayoutSlides.SetRow(cc, i - 1);
+                    }
+
+                }
+
+            }
+
+            MessageBox.Show("2---Rowindex is"+Rowindex+ " Rowcount is " +RowCount);
+            if (Rowindex == RowCount - 1)
+            {
+                MessageBox.Show("yes row is at end");
+                Rowindex--;
+            }
+                
+            
+            MainForm.Instance.editorContainer.tableLayoutSlides.RowStyles.RemoveAt(RowCount - 1);
+
+
+            //Rowindex>0 && Rowindex < RowCount-1
+            if (true )
+            {
+
+                MessageBox.Show("first if  "+Rowindex.ToString());
+                if (RowCount > 2)
+                {
+                    Selected.selectedSlidePictureBox = (PictureBox)MainForm.Instance.editorContainer.tableLayoutSlides.GetControlFromPosition(0, Rowindex);
+                    MessageBox.Show(Selected.selectedSlidePictureBox.Width.ToString());
+                    tag = (int)Selected.selectedSlidePictureBox.Tag;
+                    MessageBox.Show("tag is " + tag.ToString());
+                    foreach (Control c in MainForm.Instance.editorContainer.Controls)
+                    {
+                        if (c is Panel && c.Tag != null)
+                        {
+                            // c.Visible = false;
+                            if ((int)c.Tag == tag)
+                            {
+                                //c.Dispose();
+                                //b.Dispose();
+                                c.Visible = true;
+
+                                Selected.selectedPanel = (Panel)c;
+                                MainForm.Instance.editorContainer.Controls.SetChildIndex(Selected.selectedPanel, 0);
+
+                            }
+                        }
+                    }
+
+
+                }
+            }
+
+
+            //Rowindex == RowCount-1
+            if (false)
+            {
+                Selected.selectedSlidePictureBox = (PictureBox)MainForm.Instance.editorContainer.tableLayoutSlides.GetControlFromPosition(0, Rowindex);
+                MessageBox.Show(Selected.selectedSlidePictureBox.Width.ToString());
+                tag = (int)Selected.selectedSlidePictureBox.Tag;
+                MessageBox.Show(tag.ToString());
+                foreach (Control c in MainForm.Instance.editorContainer.Controls)
+                {
+                    if (c is Panel && c.Tag != null)
+                    {
+                        // c.Visible = false;
+                        if ((int)c.Tag == tag)
+                        {
+                            //c.Dispose();
+                            //b.Dispose();
+                            c.Visible = true;
+
+                            Selected.selectedPanel = (Panel)c;
+                            MainForm.Instance.editorContainer.Controls.SetChildIndex(Selected.selectedPanel, 0);
+
+                        }
+                    }
+                }
+
+
+
+            }
+
+
+            MainForm.Instance.editorContainer.tableLayoutSlides.RowCount--;
+
+
         }
     }
 }

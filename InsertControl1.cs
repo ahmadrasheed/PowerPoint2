@@ -25,8 +25,11 @@ namespace PowerPoint
 
             // to make the lable transparant
             pictureBox1.Controls.Add(insertPictureLBL);
-         
+            pictureBox1.Controls.Add(newSlideLBL);
             
+
+
+
 
         }
 

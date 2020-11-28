@@ -10,7 +10,7 @@ namespace PowerPoint
 {
     class Selected:Control
     {
-        
+
         public static Control selectedControl = null;
 
         public static RichTextBoxEx selectedRichTextBox = null;
@@ -19,7 +19,6 @@ namespace PowerPoint
         public static Panel selectedPanel = null;
 
         public static PictureBox selectedSlidePictureBox = null;
-
         public static Button selectedSlideButton = null;
 
 

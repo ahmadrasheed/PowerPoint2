@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
+
 //https://www.codeproject.com/Articles/548769/Animator-for-WinForms
 //https://code.google.com/archive/p/dot-net-transitions/
+// https://www.c-sharpcorner.com/forums/hide-or-delete-a-a-column-in-tablelayoutpanel
 
 namespace PowerPoint
 {
@@ -33,10 +35,6 @@ namespace PowerPoint
         {
             
             InitializeComponent();
-
-           
-            
-            
 
         }
 

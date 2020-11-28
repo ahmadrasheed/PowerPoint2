@@ -84,8 +84,7 @@
             this.tableLayoutSlides.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutSlides.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutSlides.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutSlides.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutSlides.Location = new System.Drawing.Point(24, 116);
+            this.tableLayoutSlides.Location = new System.Drawing.Point(25, 114);
             this.tableLayoutSlides.MaximumSize = new System.Drawing.Size(324, 2000);
             this.tableLayoutSlides.Name = "tableLayoutSlides";
             this.tableLayoutSlides.RowCount = 1;
