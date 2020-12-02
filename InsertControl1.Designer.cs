@@ -38,6 +38,7 @@
             this.DeletePictureBoxStripMenu1 = new System.Windows.Forms.ToolStripMenuItem();
             this.newSlideLBL = new PowerPoint.MyLabel();
             this.insertPictureLBL = new PowerPoint.MyLabel();
+            this.cutPictureBoxStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -74,9 +75,10 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copyPictureBoxStripMenuItem1,
             this.toolStripSeparator1,
+            this.cutPictureBoxStripMenuItem1,
             this.DeletePictureBoxStripMenu1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(271, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(271, 180);
             // 
             // copyPictureBoxStripMenuItem1
             // 
@@ -117,6 +119,14 @@
             this.insertPictureLBL.TabIndex = 2;
             this.insertPictureLBL.Click += new System.EventHandler(this.insertPictureLBL_Click);
             // 
+            // cutPictureBoxStripMenuItem1
+            // 
+            this.cutPictureBoxStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cutPictureBoxStripMenuItem1.Name = "cutPictureBoxStripMenuItem1";
+            this.cutPictureBoxStripMenuItem1.Size = new System.Drawing.Size(270, 44);
+            this.cutPictureBoxStripMenuItem1.Text = "cut";
+            this.cutPictureBoxStripMenuItem1.Click += new System.EventHandler(this.cutPictureBoxStripMenuItem1_Click);
+            // 
             // InsertControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -145,5 +155,6 @@
         private System.Windows.Forms.ToolStripMenuItem copyPictureBoxStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem DeletePictureBoxStripMenu1;
+        private System.Windows.Forms.ToolStripMenuItem cutPictureBoxStripMenuItem1;
     }
 }

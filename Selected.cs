@@ -22,9 +22,12 @@ namespace PowerPoint
         public static Button selectedSlideButton = null;
 
 
+
+        // copy and paste
         public static bool copyTextBoxFlag = false;
         public static bool copyPictureBoxFlag = false;
-
+        public static bool cutTextBoxFlag = false;
+        public static bool cutPictureBoxFlag = false;
 
 
     }

@@ -22,5 +22,10 @@ namespace PowerPoint
         {
             
         }
+
+        private void xuiCard1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

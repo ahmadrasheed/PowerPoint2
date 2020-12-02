@@ -35,7 +35,7 @@ namespace PowerPoint
 
         void timer_Tick(object sender, EventArgs e)
         {
-            count += 5;
+            count += 3;
             label3.Text = "Processing...  (" + count + "%)";
 
             if (count >= 100)

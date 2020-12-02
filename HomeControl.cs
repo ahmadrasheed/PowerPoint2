@@ -766,9 +766,10 @@ namespace PowerPoint
 
         public void paste_Click(object sender, EventArgs e)
         {
-            if (Selected.copyTextBoxFlag==true)
+            //MessageBox.Show("cut flag");
+            if (Selected.copyTextBoxFlag==true || Selected.cutTextBoxFlag == true)
             {
-                if (Selected.selectedRichTextBox!=null)
+                if (Selected.copyTextBoxFlag == true && Selected.selectedRichTextBox!=null)
                 {
                     RichTextBoxEx t = RichTextBoxEx.copyRTBX(Selected.selectedRichTextBox);
                     myTableLayoutPanel tableLayoutPanel1 = createPanel();
@@ -777,6 +778,17 @@ namespace PowerPoint
                     tableLayoutPanel1.Size = Selected.selectedRichTextBox.Size;
                     tableLayoutPanel1.Controls.Add(t, 0, 0);
                     tableLayoutPanel1.BackColor = t.Parent.BackColor;
+
+                    if (Selected.cutTextBoxFlag==true) 
+                    {
+                        Selected.selectedRichTextBox = null;
+                        //Selected.selectedRichTextBox.Parent = null;
+
+                        Selected.cutTextBoxFlag = false;
+
+                        MessageBox.Show("cut flag");
+                    }
+
 
                     t.Click += T_Click;
                     t.MouseDown += T_MouseDown;
@@ -802,16 +814,28 @@ namespace PowerPoint
 
                     Selected.copyTextBoxFlag = false; 
                 }
-            }
+            }//End of copy and cut RichTextBox
 
-            if (Selected.copyPictureBoxFlag==true)
+            if (Selected.copyPictureBoxFlag==true || Selected.cutPictureBoxFlag == true)
             {
 
                 InsertControl1 insert = new InsertControl1();
                 insert.CopyPictureBox();
                 Selected.copyPictureBoxFlag = false;
-
+                MessageBox.Show("from home if ");
             }
+        }
+
+        private void cutStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Selected.selectedRichTextBox!=null)
+            {
+                Selected.cutTextBoxFlag = true;
+                Selected.selectedRichTextBox.Visible = false;
+                Selected.selectedRichTextBox.Parent.Visible = false; 
+            }
+
+
         }
     }
 }

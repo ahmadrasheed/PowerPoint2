@@ -42,6 +42,7 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openAhmadInsertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paste = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -65,7 +66,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteSlideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.paste = new System.Windows.Forms.ToolStripMenuItem();
+            this.cutStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newSlidePictureBox)).BeginInit();
@@ -265,19 +266,27 @@
             this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cutStripMenuItem,
             this.openAhmadInsertToolStripMenuItem,
             this.paste,
             this.toolStripSeparator2,
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(210, 110);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(210, 145);
             // 
             // openAhmadInsertToolStripMenuItem
             // 
             this.openAhmadInsertToolStripMenuItem.Name = "openAhmadInsertToolStripMenuItem";
-            this.openAhmadInsertToolStripMenuItem.Size = new System.Drawing.Size(171, 44);
+            this.openAhmadInsertToolStripMenuItem.Size = new System.Drawing.Size(270, 44);
             this.openAhmadInsertToolStripMenuItem.Text = "copy";
             this.openAhmadInsertToolStripMenuItem.Click += new System.EventHandler(this.openAhmadInsertToolStripMenuItem_Click);
+            // 
+            // paste
+            // 
+            this.paste.Name = "paste";
+            this.paste.Size = new System.Drawing.Size(270, 44);
+            this.paste.Text = "paste";
+            this.paste.Click += new System.EventHandler(this.paste_Click);
             // 
             // toolStripSeparator2
             // 
@@ -287,7 +296,7 @@
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(171, 44);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(270, 44);
             this.deleteToolStripMenuItem.Text = "delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -517,12 +526,12 @@
             this.deleteSlideToolStripMenuItem.Text = "delete slide";
             this.deleteSlideToolStripMenuItem.Click += new System.EventHandler(this.deleteSlideToolStripMenuItem_Click);
             // 
-            // paste
+            // cutStripMenuItem
             // 
-            this.paste.Name = "paste";
-            this.paste.Size = new System.Drawing.Size(270, 44);
-            this.paste.Text = "paste";
-            this.paste.Click += new System.EventHandler(this.paste_Click);
+            this.cutStripMenuItem.Name = "cutStripMenuItem";
+            this.cutStripMenuItem.Size = new System.Drawing.Size(270, 44);
+            this.cutStripMenuItem.Text = "cut";
+            this.cutStripMenuItem.Click += new System.EventHandler(this.cutStripMenuItem_Click);
             // 
             // HomeControl
             // 
@@ -600,5 +609,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         public System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem paste;
+        private System.Windows.Forms.ToolStripMenuItem cutStripMenuItem;
     }
 }

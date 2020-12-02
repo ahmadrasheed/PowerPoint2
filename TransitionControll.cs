@@ -39,8 +39,8 @@ namespace PowerPoint
 
         }
 
-        public void myLabel1_Click(object sender, EventArgs e)
-        {
+        public void TMosaic() {
+
             MainForm.Instance.wordTabControl.Hide();
             MainForm.Instance.TopPanel.Hide();
             MainForm.Instance.editorContainer.tableLayoutSlides.Hide();
@@ -53,8 +53,8 @@ namespace PowerPoint
                 {
                     c.Visible = true;
                     BunifuTransition transition = new BunifuTransition();
-                    transition.HideSync(c, false, BunifuAnimatorNS.Animation.Mosaic);
-                    transition.ShowSync(c, false, BunifuAnimatorNS.Animation.Mosaic);
+                    transition.HideSync(c, false, Animation.Mosaic);
+                    transition.ShowSync(c, false, Animation.Mosaic);
 
                     Task.Delay(2000).Wait();
                     //MessageBox.Show("loop 1 ");
@@ -71,17 +71,248 @@ namespace PowerPoint
             }
 
 
+            MainForm.Instance.transitionCtrl.transitionStarted = true;
 
 
-           
+        }
 
-            
+        public void TRotate()
+        {
+
+            MainForm.Instance.wordTabControl.Hide();
+            MainForm.Instance.TopPanel.Hide();
+            MainForm.Instance.editorContainer.tableLayoutSlides.Hide();
+            MainForm.Instance.editorContainer.splitter1.Hide();
+            MainForm.Instance.wordTabControl.Hide();
+
+            foreach (Control c in MainForm.Instance.editorContainer.Controls)
+            {
+                if (c is Panel && c.Tag != null)
+                {
+                    c.Visible = true;
+                    BunifuTransition transition = new BunifuTransition();
+                    transition.HideSync(c, false, Animation.Rotate);
+                    transition.ShowSync(c, false, Animation.Rotate);
+
+                    Task.Delay(2000).Wait();
+                    //MessageBox.Show("loop 1 ");
+
+                    c.Visible = false;
+
+
+                    // c.Visible = false;   (int)c.Tag == tag
+                    if (false)
+                    {
+                        //c.Dispose();
+                    }
+                }
+            }
 
 
             MainForm.Instance.transitionCtrl.transitionStarted = true;
 
 
+        }
 
+        public void TLeaf()
+        {
+
+            MainForm.Instance.wordTabControl.Hide();
+            MainForm.Instance.TopPanel.Hide();
+            MainForm.Instance.editorContainer.tableLayoutSlides.Hide();
+            MainForm.Instance.editorContainer.splitter1.Hide();
+            MainForm.Instance.wordTabControl.Hide();
+
+            foreach (Control c in MainForm.Instance.editorContainer.Controls)
+            {
+                if (c is Panel && c.Tag != null)
+                {
+                    c.Visible = true;
+                    BunifuTransition transition = new BunifuTransition();
+                    transition.HideSync(c, false, Animation.Leaf);
+                    transition.ShowSync(c, false, Animation.Leaf);
+
+                    Task.Delay(2000).Wait();
+                    //MessageBox.Show("loop 1 ");
+
+                    c.Visible = false;
+
+
+                    // c.Visible = false;   (int)c.Tag == tag
+                    if (false)
+                    {
+                        //c.Dispose();
+                    }
+                }
+            }
+
+
+            MainForm.Instance.transitionCtrl.transitionStarted = true;
+
+
+        }
+
+        public void THorizSlid()
+        {
+
+            MainForm.Instance.wordTabControl.Hide();
+            MainForm.Instance.TopPanel.Hide();
+            MainForm.Instance.editorContainer.tableLayoutSlides.Hide();
+            MainForm.Instance.editorContainer.splitter1.Hide();
+            MainForm.Instance.wordTabControl.Hide();
+
+            foreach (Control c in MainForm.Instance.editorContainer.Controls)
+            {
+                if (c is Panel && c.Tag != null)
+                {
+                    c.Visible = true;
+                    BunifuTransition transition = new BunifuTransition();
+                    transition.HideSync(c, false, Animation.HorizSlide);
+                    transition.ShowSync(c, false, Animation.HorizSlide);
+
+                    Task.Delay(2000).Wait();
+                    //MessageBox.Show("loop 1 ");
+
+                    c.Visible = false;
+
+
+                    // c.Visible = false;   (int)c.Tag == tag
+                    if (false)
+                    {
+                        //c.Dispose();
+                    }
+                }
+            }
+
+
+            MainForm.Instance.transitionCtrl.transitionStarted = true;
+
+
+        }
+
+        public void TParticles()
+        {
+
+            MainForm.Instance.wordTabControl.Hide();
+            MainForm.Instance.TopPanel.Hide();
+            MainForm.Instance.editorContainer.tableLayoutSlides.Hide();
+            MainForm.Instance.editorContainer.splitter1.Hide();
+            MainForm.Instance.wordTabControl.Hide();
+
+            foreach (Control c in MainForm.Instance.editorContainer.Controls)
+            {
+                if (c is Panel && c.Tag != null)
+                {
+                    c.Visible = true;
+                    BunifuTransition transition = new BunifuTransition();
+                    transition.HideSync(c, false, Animation.Particles);
+                    transition.ShowSync(c, false, Animation.Particles);
+
+                    Task.Delay(2000).Wait();
+                    //MessageBox.Show("loop 1 ");
+
+                    c.Visible = false;
+
+
+                    // c.Visible = false;   (int)c.Tag == tag
+                    if (false)
+                    {
+                        //c.Dispose();
+                    }
+                }
+            }
+
+
+            MainForm.Instance.transitionCtrl.transitionStarted = true;
+
+
+        }
+
+        public void TScale()
+        {
+
+            MainForm.Instance.wordTabControl.Hide();
+            MainForm.Instance.TopPanel.Hide();
+            MainForm.Instance.editorContainer.tableLayoutSlides.Hide();
+            MainForm.Instance.editorContainer.splitter1.Hide();
+            MainForm.Instance.wordTabControl.Hide();
+
+            foreach (Control c in MainForm.Instance.editorContainer.Controls)
+            {
+                if (c is Panel && c.Tag != null)
+                {
+                    c.Visible = true;
+                    BunifuTransition transition = new BunifuTransition();
+                    transition.HideSync(c, false, Animation.Scale);
+                    transition.ShowSync(c, false, Animation.Scale);
+
+                    Task.Delay(2000).Wait();
+                    //MessageBox.Show("loop 1 ");
+
+                    c.Visible = false;
+
+
+                    // c.Visible = false;   (int)c.Tag == tag
+                    if (false)
+                    {
+                        //c.Dispose();
+                    }
+                }
+            }
+
+
+            MainForm.Instance.transitionCtrl.transitionStarted = true;
+
+
+        }
+
+        public void TVerticleAndParticles()
+        {
+
+            MainForm.Instance.wordTabControl.Hide();
+            MainForm.Instance.TopPanel.Hide();
+            MainForm.Instance.editorContainer.tableLayoutSlides.Hide();
+            MainForm.Instance.editorContainer.splitter1.Hide();
+            MainForm.Instance.wordTabControl.Hide();
+
+            foreach (Control c in MainForm.Instance.editorContainer.Controls)
+            {
+                if (c is Panel && c.Tag != null)
+                {
+                    c.Visible = true;
+                    BunifuTransition transition = new BunifuTransition();
+                    transition.HideSync(c, false, Animation.VertBlind);
+                    transition.ShowSync(c, false, Animation.Particles);
+
+                    Task.Delay(2000).Wait();
+                    //MessageBox.Show("loop 1 ");
+
+                    c.Visible = false;
+
+
+                    // c.Visible = false;   (int)c.Tag == tag
+                    if (false)
+                    {
+                        //c.Dispose();
+                    }
+                }
+            }
+
+
+            MainForm.Instance.transitionCtrl.transitionStarted = true;
+
+
+        }
+
+
+
+
+
+        private void myLabel1_Click(object sender, EventArgs e)
+        {
+
+            TParticles();
+            
 
             //MessageBox.Show("Transitioning");
             //animator1.Hide(
@@ -98,9 +329,7 @@ namespace PowerPoint
 
         private void pushTransitionLBL_Click(object sender, EventArgs e)
         {
-            BunifuTransition transition = new BunifuTransition();
-            transition.HideSync(Selected.selectedPanel, false, BunifuAnimatorNS.Animation.HorizSlideAndRotate);
-            transition.ShowSync(Selected.selectedPanel, false, BunifuAnimatorNS.Animation.HorizSlideAndRotate);
+            TMosaic();
 
 
             //animator1.BeginUpdate(Selected.selectedRichTextBox);
@@ -122,6 +351,9 @@ namespace PowerPoint
 
         private void myLabel2_Click(object sender, EventArgs e)
         {
+            TScale();
+            
+            
             //zeroitOJAnim1.Control = MainForm.Instance.editorContainer.panel2;
             //zeroitOJAnim1.Start();
             //Panel p = MainForm.Instance.editorContainer;
@@ -140,7 +372,7 @@ namespace PowerPoint
 
         private void revealLBL_Click(object sender, EventArgs e)
         {
-
+            THorizSlid();
         }
 
         private void FadeLBL_Click(object sender, EventArgs e)
@@ -176,6 +408,11 @@ namespace PowerPoint
 
             MainForm.Instance.transitionCtrl.transitionStarted = true;
 
+        }
+
+        private void splitLBL_Click(object sender, EventArgs e)
+        {
+            TVerticleAndParticles();
         }
     }
 }

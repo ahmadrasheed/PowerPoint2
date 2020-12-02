@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
+// developed by Ahmad rasheed algeboory 077258696060    ahmad.rasheed1@yahoo.com
 
 //https://www.codeproject.com/Articles/548769/Animator-for-WinForms
 //https://code.google.com/archive/p/dot-net-transitions/
@@ -562,7 +563,8 @@ namespace PowerPoint
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-
+            Preview p = new Preview();
+            p.Show();
         }
 
 

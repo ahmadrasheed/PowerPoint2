@@ -117,10 +117,11 @@ namespace PowerPoint
         public  void CopyPictureBox() {
 
             
-            if (Selected.copyPictureBoxFlag==true)
+            if (Selected.copyPictureBoxFlag==true || Selected.cutPictureBoxFlag==true)
             {
-                if (Selected.selectedPictureBox!=null)
+                if (Selected.selectedPictureBox!=null )
                 {
+                    MessageBox.Show("here1");
                     // display image in picture box  
                     PictureBox pic = new PictureBox();
                     //pic = Selected.selectedPictureBox;
@@ -150,6 +151,15 @@ namespace PowerPoint
 
                     //MainForm.Instance.editorContainer.panel2.Controls.Add(pic);
 
+                    if (Selected.cutPictureBoxFlag==true) {
+
+                        Selected.selectedPictureBox = null;
+                       
+                        Selected.cutPictureBoxFlag = false;
+
+
+                    
+                    }
 
                     xLocation += 50; yLocation += 50;
 
@@ -172,6 +182,7 @@ namespace PowerPoint
 
 
                     Selected.copyPictureBoxFlag = false;
+                    Selected.cutPictureBoxFlag = false;
 
                 }
             }
@@ -215,8 +226,8 @@ namespace PowerPoint
         {
 
             Selected.copyTextBoxFlag = false;
+            Selected.cutTextBoxFlag = false;
             Selected.copyPictureBoxFlag = true;
-            MessageBox.Show("copyPictureBoxFlag 2020true");
 
 
         }
@@ -228,6 +239,21 @@ namespace PowerPoint
             {
                 Selected.selectedPictureBox.Parent.Dispose();
                 Selected.selectedPictureBox.Dispose();
+            }
+        }
+
+        private void cutPictureBoxStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (Selected.selectedPictureBox.Parent != null)
+            {
+                Selected.cutTextBoxFlag = false;
+                Selected.copyTextBoxFlag = false;
+                Selected.copyPictureBoxFlag = false;
+                Selected.cutPictureBoxFlag = true;
+
+
+                Selected.selectedPictureBox.Parent.Visible = false;
+                Selected.selectedPictureBox.Visible = false;
             }
         }
 
