@@ -351,16 +351,20 @@ namespace PowerPoint
         public static RichTextBoxEx copyRTBX(RichTextBoxEx copy)
 
         {
-            RichTextBoxEx temp = new RichTextBoxEx();
-            temp.Rtf = copy.Rtf;
-            temp.Dock = DockStyle.Fill;
-            temp.Size = copy.Size;
-            temp.BackColor = copy.BackColor;
-            //MessageBox.Show("temp:"+temp.Size.ToString());
-            //MessageBox.Show("Selected:"+Selected.selectedRichTextBox.Size.ToString());
-            //
-            //MessageBox.Show(temp.Size.ToString());
-            return temp;
+            if (copy !=null)
+            {
+                RichTextBoxEx temp = new RichTextBoxEx();
+                temp.Rtf = copy.Rtf;
+                temp.Dock = DockStyle.Fill;
+                temp.Size = copy.Size;
+                temp.BackColor = copy.BackColor;
+                //MessageBox.Show("temp:"+temp.Size.ToString());
+                //MessageBox.Show("Selected:"+Selected.selectedRichTextBox.Size.ToString());
+                //
+                //MessageBox.Show(temp.Size.ToString());
+                return temp; 
+            }
+            return null;
         }
 
 

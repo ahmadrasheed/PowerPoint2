@@ -26,6 +26,7 @@ namespace PowerPoint
             // to make the lable transparant
             pictureBox1.Controls.Add(insertPictureLBL);
             pictureBox1.Controls.Add(newSlideLBL);
+            pictureBox1.Controls.Add(newSlideLBL);
             
 
 
@@ -97,6 +98,7 @@ namespace PowerPoint
                 PictureBox pic = (PictureBox)sender;
                 pic.BorderStyle = BorderStyle.FixedSingle;
                 Selected.selectedPictureBox = (PictureBox)sender;
+                Selected.selectedPictureBox.Invalidate();
                 Selected.selectedControl = (Control)sender;
 
                 //MainForm.Instance.editorContainer.panel2.Controls.SetChildIndex(Selected.selectedPictureBox.Parent, 0);
@@ -108,80 +110,76 @@ namespace PowerPoint
 
         }
 
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+     
+
+    
+
+        public  void CopyPictureBox() {
+
+            
+            if (Selected.copyPictureBoxFlag==true)
+            {
+                if (Selected.selectedPictureBox!=null)
+                {
+                    // display image in picture box  
+                    PictureBox pic = new PictureBox();
+                    //pic = Selected.selectedPictureBox;
+                    pic.Image = Selected.selectedPictureBox.Image;
+                    // image file path  
+                    //textBox1.Text = open.FileName;
+
+                    //pic.Size = new System.Drawing.Size(600, 600);
+
+                    //t.Multiline = true;
+
+                    pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pic.Dock = System.Windows.Forms.DockStyle.Fill;
+                    pic.Margin = new System.Windows.Forms.Padding(5);
+                    //pic.BackColor = Color.White;
+                    pic.Location = Selected.selectedPictureBox.Location;
+                    pic.BorderStyle = BorderStyle.None;
+                    TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
+                    //tableLayoutPanel1=Selected.selectedPictureBox.Parent as TableLayoutPanel;
+                    tableLayoutPanel1.Size = Selected.selectedPictureBox.Parent.Size;
+                    tableLayoutPanel1.Controls.Add(pic, 0, 0);
 
 
-            //Selected.selectedControl.Dispose();
-            if(Selected.selectedPictureBox.Parent!=null)
-            Selected.selectedPictureBox.Parent.Dispose();
+                    //MainForm.Instance.editorContainer.panel2.Controls.Add(tableLayoutPanel1);
+                    Selected.selectedPanel.Controls.Add(tableLayoutPanel1);
+                    //MainForm.Instance.editorContainer.panel2.Controls.SetChildIndex(tableLayoutPanel1, 0);
+
+                    //MainForm.Instance.editorContainer.panel2.Controls.Add(pic);
+
+
+                    xLocation += 50; yLocation += 50;
+
+
+
+                    pic.BorderStyle = BorderStyle.None;
+                    pic.Click += T_Click;
+                    pic.MouseDown += T_MouseDown;
+                    pic.MouseHover += T_MouseHover;
+                    pic.MouseLeave += T_MouseLeave;
+                    //MainForm.Instance.editorContainer.panel2.Controls.Add(t);
+
+                    Selected.selectedPictureBox = pic;
+
+                    pic.ContextMenuStrip = contextMenuStrip1;
+                    //MainForm.Instance.editorContainer.panel2.Controls.Add(tableLayoutPanel1);
+                    ControlMoverOrResizer.Init(tableLayoutPanel1);
+                    ControlMoverOrResizer.Init(pic);
+                    ControlMoverOrResizer.Init(pic, tableLayoutPanel1);
+
+
+                    Selected.copyPictureBoxFlag = false;
+
+                }
+            }
+
 
         }
 
-        private void openAhmadInsertToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            // display image in picture box  
-            PictureBox pic = new PictureBox();
-            //pic = Selected.selectedPictureBox;
-            pic.Image = Selected.selectedPictureBox.Image;
-            // image file path  
-            //textBox1.Text = open.FileName;
-
-
-
-            //pic.Size = new System.Drawing.Size(600, 600);
-
-            //t.Multiline = true;
-
-            pic.SizeMode = PictureBoxSizeMode.StretchImage;
-            pic.Dock = System.Windows.Forms.DockStyle.Fill;
-            pic.Margin = new System.Windows.Forms.Padding(5);
-            //pic.BackColor = Color.White;
-            pic.Location = Selected.selectedPictureBox.Location;
-            pic.BorderStyle = BorderStyle.None;
-            TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
-            //tableLayoutPanel1=Selected.selectedPictureBox.Parent as TableLayoutPanel;
-            tableLayoutPanel1.Size = Selected.selectedPictureBox.Parent.Size;
-            tableLayoutPanel1.Controls.Add(pic, 0, 0);
-
-
-            //MainForm.Instance.editorContainer.panel2.Controls.Add(tableLayoutPanel1);
-            Selected.selectedPanel.Controls.Add(tableLayoutPanel1);
-            //MainForm.Instance.editorContainer.panel2.Controls.SetChildIndex(tableLayoutPanel1, 0);
-
-            //MainForm.Instance.editorContainer.panel2.Controls.Add(pic);
-
-
-            xLocation += 50; yLocation += 50;
-
-            pic.BorderStyle = BorderStyle.None;
-            pic.Click += T_Click;
-            pic.MouseDown += T_MouseDown;
-            pic.MouseHover += T_MouseHover;
-            pic.MouseLeave += T_MouseLeave;
-            //MainForm.Instance.editorContainer.panel2.Controls.Add(t);
-
-            Selected.selectedPictureBox = pic;
-
-            pic.ContextMenuStrip = contextMenuStrip1;
-            //MainForm.Instance.editorContainer.panel2.Controls.Add(tableLayoutPanel1);
-            ControlMoverOrResizer.Init(tableLayoutPanel1);
-            ControlMoverOrResizer.Init(pic);
-            ControlMoverOrResizer.Init(pic, tableLayoutPanel1);
-
-
-            MessageBox.Show("copy image done");
-
-
-
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
 
         private myTableLayoutPanel createPanel()
@@ -204,11 +202,33 @@ namespace PowerPoint
 
         private void newSlideLBL_Click(object sender, EventArgs e)
         {
-            Panel p = new Panel();
-            p.Dock = DockStyle.Fill;
-            //MainForm.Instance.editorContainer.Controls.Add(null);
-            //MainForm.Instance.editorContainer.Controls.SetChildIndex(p, 0);
+            HomeControl homeCtrl = new HomeControl();
+            homeCtrl.newSlide();
+            
+        }
 
+        
+
+      
+
+        private void copyPictureBoxStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+            Selected.copyTextBoxFlag = false;
+            Selected.copyPictureBoxFlag = true;
+            MessageBox.Show("copyPictureBoxFlag 2020true");
+
+
+        }
+
+        private void DeletePictureBoxStripMenu1_Click(object sender, EventArgs e)
+        {
+            //Selected.selectedControl.Dispose();
+            if (Selected.selectedPictureBox.Parent != null)
+            {
+                Selected.selectedPictureBox.Parent.Dispose();
+                Selected.selectedPictureBox.Dispose();
+            }
         }
 
         private void insertPictureLBL_Click(object sender, EventArgs e)

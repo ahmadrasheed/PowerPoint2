@@ -34,10 +34,10 @@ namespace PowerPoint
 
         private void EditorContainer_KeyDown(object sender, KeyEventArgs e)
         {
-            MessageBox.Show("delete pressed");
+            //MessageBox.Show("delete pressed");
             if (e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back)
             {
-                MessageBox.Show("delete pressed");
+               // MessageBox.Show("delete pressed");
                 //e.Handled = true;
             }
         }
@@ -46,7 +46,7 @@ namespace PowerPoint
         {
             if (MainForm.Instance.transitionCtrl.transitionStarted)
             {
-                MessageBox.Show("editor mouse click activated");
+                //MessageBox.Show("editor mouse click activated");
                 MainForm.Instance.wordTabControl.Show();
                 MainForm.Instance.TopPanel.Show();
                 MainForm.Instance.editorContainer.tableLayoutSlides.Show();
@@ -88,6 +88,22 @@ namespace PowerPoint
             //MessageBox.Show("EditorContainer just painted");
 
         
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasteStrip_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 }

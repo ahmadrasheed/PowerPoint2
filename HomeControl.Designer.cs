@@ -42,6 +42,7 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openAhmadInsertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
             this.newSlidePictureBox = new System.Windows.Forms.PictureBox();
@@ -64,6 +65,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteSlideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paste = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newSlidePictureBox)).BeginInit();
@@ -259,24 +261,33 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.AutoSize = false;
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openAhmadInsertToolStripMenuItem,
+            this.paste,
+            this.toolStripSeparator2,
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(144, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(210, 110);
             // 
             // openAhmadInsertToolStripMenuItem
             // 
             this.openAhmadInsertToolStripMenuItem.Name = "openAhmadInsertToolStripMenuItem";
-            this.openAhmadInsertToolStripMenuItem.Size = new System.Drawing.Size(143, 36);
+            this.openAhmadInsertToolStripMenuItem.Size = new System.Drawing.Size(171, 44);
             this.openAhmadInsertToolStripMenuItem.Text = "copy";
             this.openAhmadInsertToolStripMenuItem.Click += new System.EventHandler(this.openAhmadInsertToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(206, 6);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(143, 36);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(171, 44);
             this.deleteToolStripMenuItem.Text = "delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -506,6 +517,13 @@
             this.deleteSlideToolStripMenuItem.Text = "delete slide";
             this.deleteSlideToolStripMenuItem.Click += new System.EventHandler(this.deleteSlideToolStripMenuItem_Click);
             // 
+            // paste
+            // 
+            this.paste.Name = "paste";
+            this.paste.Size = new System.Drawing.Size(270, 44);
+            this.paste.Text = "paste";
+            this.paste.Click += new System.EventHandler(this.paste_Click);
+            // 
             // HomeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(168F, 168F);
@@ -561,7 +579,6 @@
         private System.Windows.Forms.PictureBox colorPictureBox;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.PictureBox newSlidePictureBox;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem openAhmadInsertToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.Panel panel3;
@@ -580,5 +597,8 @@
         private MyLabel insertTextBoxLBL;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem deleteSlideToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        public System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem paste;
     }
 }

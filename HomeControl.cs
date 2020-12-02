@@ -16,6 +16,8 @@ namespace PowerPoint
     {
         public  int xLocation = 250;
         public  int yLocation = 50;
+
+        
         public  HomeControl()
         {
             InitializeComponent();
@@ -50,6 +52,7 @@ namespace PowerPoint
             p.Size = new Size(200, 300);
             
             p.Click += P_Click;
+            p.ContextMenuStrip = contextMenuStrip1;
             
 
 
@@ -629,69 +632,24 @@ namespace PowerPoint
 
         private void openAhmadInsertToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            RichTextBoxEx t= RichTextBoxEx.copyRTBX(Selected.selectedRichTextBox);
-            myTableLayoutPanel tableLayoutPanel1 = createPanel();
-            
-            //MessageBox.Show("t :"+t.Size.ToString());
-            tableLayoutPanel1.Size = Selected.selectedRichTextBox.Size;
-            tableLayoutPanel1.Controls.Add(t, 0, 0);
-            tableLayoutPanel1.BackColor = t.Parent.BackColor;
-            //copyRTB();
-            /*
-            RichTextBoxEx t = new RichTextBoxEx();
-            //t.Multiline = true;
-            t.Text = Selected.selectedRichTextBox.Text;
-            t.Size = Selected.selectedRichTextBox.Size;
-            //t.Multiline = true;
-            t.WordWrap = true;
-            t.Font = Selected.selectedRichTextBox.SelectionFont;
-            t.EnableAutoDragDrop = true;
-            t.WordWrap = true;
-            t.Font = new Font("Georgia", 20);
-            t.EnableAutoDragDrop = true;
-            t.ShortcutsEnabled = true;
-            t.Dock = System.Windows.Forms.DockStyle.Fill;
-            t.Margin = new System.Windows.Forms.Padding(40);
-            t.BackColor = Color.Red;
-            t.Location = new System.Drawing.Point(xLocation, yLocation);
-            t.BorderStyle = BorderStyle.None;
-            */
-            t.Click += T_Click;
-            t.MouseDown += T_MouseDown;
-            t.MouseHover += T_MouseHover;
-            t.MouseLeave += T_MouseLeave;
+            Selected.copyTextBoxFlag = true;
+            Selected.copyPictureBoxFlag = false;
 
 
-            Selected.selectedPanel.Controls.Add(tableLayoutPanel1);
-            //MainForm.Instance.editorContainer.panel2.Controls.Add(t);
-
-            // send this tableLayoutpanel1 to front.
-            //MainForm.Instance.editorContainer.panel2.Controls.SetChildIndex(tableLayoutPanel1, 0);
-
-            Selected.selectedRichTextBox = t;
-
-
-
-            t.ContextMenuStrip = contextMenuStrip1;
-            //MainForm.Instance.editorContainer.panel2.Controls.Add(tableLayoutPanel1);
-            ControlMoverOrResizer.Init(tableLayoutPanel1);
-            ControlMoverOrResizer.Init(t);
-            ControlMoverOrResizer.Init(t, tableLayoutPanel1);
-            
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-
-            
+            if (Selected.selectedControl!=null&& Selected.selectedControl.Parent != null)
+            {
                 Selected.selectedControl.Parent.Dispose();
                 Selected.selectedControl.Dispose();
-
-          
+                Selected.selectedControl = null;
+                Selected.selectedRichTextBox = null;
                 
-            
+            }
+  
         }
 
         private void shapeColorFillLBL_Click(object sender, EventArgs e)
@@ -715,7 +673,7 @@ namespace PowerPoint
 
         }
 
-        private void newSlidePictureBox_Click(object sender, EventArgs e)
+        public void newSlidePictureBox_Click(object sender, EventArgs e)
         {
             newSlide();
         }
@@ -803,7 +761,57 @@ namespace PowerPoint
 
         private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
         {
+            
+        }
 
+        public void paste_Click(object sender, EventArgs e)
+        {
+            if (Selected.copyTextBoxFlag==true)
+            {
+                if (Selected.selectedRichTextBox!=null)
+                {
+                    RichTextBoxEx t = RichTextBoxEx.copyRTBX(Selected.selectedRichTextBox);
+                    myTableLayoutPanel tableLayoutPanel1 = createPanel();
+
+                    //MessageBox.Show("t :"+t.Size.ToString());
+                    tableLayoutPanel1.Size = Selected.selectedRichTextBox.Size;
+                    tableLayoutPanel1.Controls.Add(t, 0, 0);
+                    tableLayoutPanel1.BackColor = t.Parent.BackColor;
+
+                    t.Click += T_Click;
+                    t.MouseDown += T_MouseDown;
+                    t.MouseHover += T_MouseHover;
+                    t.MouseLeave += T_MouseLeave;
+
+
+                    Selected.selectedPanel.Controls.Add(tableLayoutPanel1);
+                    //MainForm.Instance.editorContainer.panel2.Controls.Add(t);
+
+                    // send this tableLayoutpanel1 to front.
+                    //MainForm.Instance.editorContainer.panel2.Controls.SetChildIndex(tableLayoutPanel1, 0);
+
+                    Selected.selectedRichTextBox = t;
+
+
+
+                    t.ContextMenuStrip = contextMenuStrip1;
+                    //MainForm.Instance.editorContainer.panel2.Controls.Add(tableLayoutPanel1);
+                    ControlMoverOrResizer.Init(tableLayoutPanel1);
+                    ControlMoverOrResizer.Init(t);
+                    ControlMoverOrResizer.Init(t, tableLayoutPanel1);
+
+                    Selected.copyTextBoxFlag = false; 
+                }
+            }
+
+            if (Selected.copyPictureBoxFlag==true)
+            {
+
+                InsertControl1 insert = new InsertControl1();
+                insert.CopyPictureBox();
+                Selected.copyPictureBoxFlag = false;
+
+            }
         }
     }
 }

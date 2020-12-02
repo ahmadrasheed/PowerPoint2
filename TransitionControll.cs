@@ -57,7 +57,7 @@ namespace PowerPoint
                     transition.ShowSync(c, false, BunifuAnimatorNS.Animation.Mosaic);
 
                     Task.Delay(2000).Wait();
-                    MessageBox.Show("loop 1 ");
+                    //MessageBox.Show("loop 1 ");
 
                     c.Visible = false;
 
@@ -99,6 +99,7 @@ namespace PowerPoint
         private void pushTransitionLBL_Click(object sender, EventArgs e)
         {
             BunifuTransition transition = new BunifuTransition();
+            transition.HideSync(Selected.selectedPanel, false, BunifuAnimatorNS.Animation.HorizSlideAndRotate);
             transition.ShowSync(Selected.selectedPanel, false, BunifuAnimatorNS.Animation.HorizSlideAndRotate);
 
 
@@ -124,10 +125,11 @@ namespace PowerPoint
             //zeroitOJAnim1.Control = MainForm.Instance.editorContainer.panel2;
             //zeroitOJAnim1.Start();
             //Panel p = MainForm.Instance.editorContainer;
-            zeroitAnimatorEdit1.Target = Selected.selectedPanel;
-            zeroitAnimatorEdit1.TargetHeight = Selected.selectedPanel.Height;
-            zeroitAnimatorEdit1.TargetWidth = Selected.selectedPanel.Width;
-            zeroitAnimatorEdit1.Activate();
+
+            //zeroitAnimatorEdit1.Target = Selected.selectedPanel;
+            //zeroitAnimatorEdit1.TargetHeight = Selected.selectedPanel.Height;
+            //zeroitAnimatorEdit1.TargetWidth = Selected.selectedPanel.Width;
+            //zeroitAnimatorEdit1.Activate();
         }
 
         private void previewLBL_Click(object sender, EventArgs e)
@@ -138,6 +140,41 @@ namespace PowerPoint
 
         private void revealLBL_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void FadeLBL_Click(object sender, EventArgs e)
+        {
+            MainForm.Instance.wordTabControl.Hide();
+            MainForm.Instance.TopPanel.Hide();
+            MainForm.Instance.editorContainer.tableLayoutSlides.Hide();
+            MainForm.Instance.editorContainer.splitter1.Hide();
+            MainForm.Instance.wordTabControl.Hide();
+
+            foreach (Control c in MainForm.Instance.editorContainer.Controls)
+            {
+                if (c is Panel && c.Tag != null)
+                {
+                    c.Visible = true;
+                    BunifuTransition transition = new BunifuTransition();
+                    transition.HideSync(c, false, BunifuAnimatorNS.Animation.Transparent);
+                    transition.ShowSync(c, false, BunifuAnimatorNS.Animation.Transparent);
+
+                    Task.Delay(2000).Wait();
+                    //MessageBox.Show("loop 1 ");
+
+                    c.Visible = false;
+
+
+                    // c.Visible = false;   (int)c.Tag == tag
+                    if (false)
+                    {
+                        //c.Dispose();
+                    }
+                }
+            }// end Foreach
+
+            MainForm.Instance.transitionCtrl.transitionStarted = true;
 
         }
     }
