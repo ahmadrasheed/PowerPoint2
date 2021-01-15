@@ -32,8 +32,8 @@ namespace PowerPoint
             base.OnMouseLeave(e);
         }
 
-        public override bool AutoSize { get => base.AutoSize; set => base.AutoSize = false; }
-        public override Color BackColor { get => base.BackColor; set => base.BackColor = Color.Transparent; }
-        public override string Text { get => base.Text; set => base.Text = ""; }
+        //public override bool AutoSize { get => base.AutoSize; set => base.AutoSize = false; }
+        //public override Color BackColor { get => base.BackColor; set => base.BackColor = Color.Transparent; }
+        //public override string Text { get => base.Text; set => base.Text = ""; }
     }
 }

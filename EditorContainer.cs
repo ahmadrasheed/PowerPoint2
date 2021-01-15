@@ -44,6 +44,7 @@ namespace PowerPoint
 
         private void EditorContainer_MouseClick(object sender, MouseEventArgs e)
         {
+            //MessageBox.Show("editor mouse click activated before if statement");
             if (MainForm.Instance.transitionCtrl.transitionStarted)
             {
                 //MessageBox.Show("editor mouse click activated");

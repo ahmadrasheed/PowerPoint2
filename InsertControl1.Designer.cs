@@ -35,10 +35,10 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyPictureBoxStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.cutPictureBoxStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.DeletePictureBoxStripMenu1 = new System.Windows.Forms.ToolStripMenuItem();
             this.newSlideLBL = new PowerPoint.MyLabel();
             this.insertPictureLBL = new PowerPoint.MyLabel();
-            this.cutPictureBoxStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -54,6 +54,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // contextMenuStrip2
             // 
@@ -78,26 +79,34 @@
             this.cutPictureBoxStripMenuItem1,
             this.DeletePictureBoxStripMenu1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(271, 180);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(172, 142);
             // 
             // copyPictureBoxStripMenuItem1
             // 
             this.copyPictureBoxStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.copyPictureBoxStripMenuItem1.Name = "copyPictureBoxStripMenuItem1";
-            this.copyPictureBoxStripMenuItem1.Size = new System.Drawing.Size(270, 44);
+            this.copyPictureBoxStripMenuItem1.Size = new System.Drawing.Size(171, 44);
             this.copyPictureBoxStripMenuItem1.Text = "copy";
             this.copyPictureBoxStripMenuItem1.Click += new System.EventHandler(this.copyPictureBoxStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(267, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(168, 6);
+            // 
+            // cutPictureBoxStripMenuItem1
+            // 
+            this.cutPictureBoxStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cutPictureBoxStripMenuItem1.Name = "cutPictureBoxStripMenuItem1";
+            this.cutPictureBoxStripMenuItem1.Size = new System.Drawing.Size(171, 44);
+            this.cutPictureBoxStripMenuItem1.Text = "cut";
+            this.cutPictureBoxStripMenuItem1.Click += new System.EventHandler(this.cutPictureBoxStripMenuItem1_Click);
             // 
             // DeletePictureBoxStripMenu1
             // 
             this.DeletePictureBoxStripMenu1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.DeletePictureBoxStripMenu1.Name = "DeletePictureBoxStripMenu1";
-            this.DeletePictureBoxStripMenu1.Size = new System.Drawing.Size(270, 44);
+            this.DeletePictureBoxStripMenu1.Size = new System.Drawing.Size(171, 44);
             this.DeletePictureBoxStripMenu1.Text = "Delete";
             this.DeletePictureBoxStripMenu1.Click += new System.EventHandler(this.DeletePictureBoxStripMenu1_Click);
             // 
@@ -118,14 +127,6 @@
             this.insertPictureLBL.Size = new System.Drawing.Size(85, 128);
             this.insertPictureLBL.TabIndex = 2;
             this.insertPictureLBL.Click += new System.EventHandler(this.insertPictureLBL_Click);
-            // 
-            // cutPictureBoxStripMenuItem1
-            // 
-            this.cutPictureBoxStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cutPictureBoxStripMenuItem1.Name = "cutPictureBoxStripMenuItem1";
-            this.cutPictureBoxStripMenuItem1.Size = new System.Drawing.Size(270, 44);
-            this.cutPictureBoxStripMenuItem1.Text = "cut";
-            this.cutPictureBoxStripMenuItem1.Click += new System.EventHandler(this.cutPictureBoxStripMenuItem1_Click);
             // 
             // InsertControl1
             // 

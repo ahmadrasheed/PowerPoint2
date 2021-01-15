@@ -121,7 +121,7 @@ namespace PowerPoint
             {
                 if (Selected.selectedPictureBox!=null )
                 {
-                    MessageBox.Show("here1");
+                    //MessageBox.Show("here1");
                     // display image in picture box  
                     PictureBox pic = new PictureBox();
                     //pic = Selected.selectedPictureBox;
@@ -255,6 +255,11 @@ namespace PowerPoint
                 Selected.selectedPictureBox.Parent.Visible = false;
                 Selected.selectedPictureBox.Visible = false;
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void insertPictureLBL_Click(object sender, EventArgs e)

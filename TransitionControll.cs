@@ -1,5 +1,6 @@
 ﻿using BunifuAnimatorNS;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -56,9 +57,12 @@ namespace PowerPoint
                     transition.HideSync(c, false, Animation.Mosaic);
                     transition.ShowSync(c, false, Animation.Mosaic);
 
-                    Task.Delay(2000).Wait();
-                    //MessageBox.Show("loop 1 ");
+                    //ahmad2020
 
+                    // Task.Delay(2000).Wait();
+                    //Task.WaitAll();
+                    //MessageBox.Show("loop 1 ");
+                    Thread.Sleep(3000);
                     c.Visible = false;
 
 
@@ -94,9 +98,10 @@ namespace PowerPoint
                     transition.HideSync(c, false, Animation.Rotate);
                     transition.ShowSync(c, false, Animation.Rotate);
 
-                    Task.Delay(2000).Wait();
+                    //  Task.Delay(2000).Wait();
+                    Task.WaitAll();
                     //MessageBox.Show("loop 1 ");
-
+                    Thread.Sleep(3000);
                     c.Visible = false;
 
 
@@ -132,9 +137,10 @@ namespace PowerPoint
                     transition.HideSync(c, false, Animation.Leaf);
                     transition.ShowSync(c, false, Animation.Leaf);
 
-                    Task.Delay(2000).Wait();
+                    // Task.Delay(2000).Wait();
+                    Task.WaitAll();
                     //MessageBox.Show("loop 1 ");
-
+                    Thread.Sleep(3000);
                     c.Visible = false;
 
 
@@ -170,9 +176,11 @@ namespace PowerPoint
                     transition.HideSync(c, false, Animation.HorizSlide);
                     transition.ShowSync(c, false, Animation.HorizSlide);
 
-                    Task.Delay(2000).Wait();
-                    //MessageBox.Show("loop 1 ");
+                    //Task.Delay(2000).Wait();
+                   
 
+                    //MessageBox.Show("loop 1 ");
+                    Thread.Sleep(3000);
                     c.Visible = false;
 
 
@@ -208,9 +216,9 @@ namespace PowerPoint
                     transition.HideSync(c, false, Animation.Particles);
                     transition.ShowSync(c, false, Animation.Particles);
 
-                    Task.Delay(2000).Wait();
+                    // Task.WaitAll();
                     //MessageBox.Show("loop 1 ");
-
+                    Thread.Sleep(3000);
                     c.Visible = false;
 
 
@@ -246,9 +254,10 @@ namespace PowerPoint
                     transition.HideSync(c, false, Animation.Scale);
                     transition.ShowSync(c, false, Animation.Scale);
 
-                    Task.Delay(2000).Wait();
-                    //MessageBox.Show("loop 1 ");
-
+                    // Task.Delay(2000).Wait();
+                    // Task.WaitAll();
+                    // MessageBox.Show("loop 1 ");
+                    Thread.Sleep(3000);
                     c.Visible = false;
 
 
@@ -284,9 +293,10 @@ namespace PowerPoint
                     transition.HideSync(c, false, Animation.VertBlind);
                     transition.ShowSync(c, false, Animation.Particles);
 
-                    Task.Delay(2000).Wait();
+                    // Task.Delay(2000).Wait();
+                    //Task.WaitAll();
                     //MessageBox.Show("loop 1 ");
-
+                    Thread.Sleep(3000);
                     c.Visible = false;
 
 
@@ -366,8 +376,9 @@ namespace PowerPoint
 
         private void previewLBL_Click(object sender, EventArgs e)
         {
-            Preview pre = new Preview();
-            pre.Show();
+            TMosaic();
+            TScale();
+
         }
 
         private void revealLBL_Click(object sender, EventArgs e)
@@ -392,9 +403,9 @@ namespace PowerPoint
                     transition.HideSync(c, false, BunifuAnimatorNS.Animation.Transparent);
                     transition.ShowSync(c, false, BunifuAnimatorNS.Animation.Transparent);
 
-                    Task.Delay(2000).Wait();
+                    //Task.WaitAll();
                     //MessageBox.Show("loop 1 ");
-
+                    Thread.Sleep(3000);
                     c.Visible = false;
 
 
@@ -413,6 +424,46 @@ namespace PowerPoint
         private void splitLBL_Click(object sender, EventArgs e)
         {
             TVerticleAndParticles();
+        }
+
+        private void randomBarLBL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void shapeLBL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uncoverLBL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void coverLBL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flashLBL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fallOverLBL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void drapeLBL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void noneLBL_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

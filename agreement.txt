@@ -1,0 +1,10 @@
+this program is an emulator of Microsoft PowerPoint2016, developed by e learning office of Ninwa Directorate to help computer teachers to practice on old and low hardware PCs where can not install office 2016 on RAM=512 , operating system XP. 
+we hope everyone can install it and get the benifits.
+ 
+
+Developed by: Ahmad Rasheed Algeboory, Ahmad Sami albaroodi, 
+supervised by: Mahmood Hashil Aldulaime. 
+
+install it ? Yes: agree , No: disagree?
+--------------------------------------------------------------------
+contact: Ahmad.rasheed1@yahoo.com

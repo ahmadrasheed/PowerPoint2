@@ -840,7 +840,7 @@ namespace PowerPoint
 
         private void richTextBoxEx1_TextChanged(object sender, EventArgs e)
         {
-            zeroitAnimatorEdit1.Activate();
+           // zeroitAnimatorEdit1.Activate();
         }
     }
     

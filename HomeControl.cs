@@ -786,7 +786,7 @@ namespace PowerPoint
 
                         Selected.cutTextBoxFlag = false;
 
-                        MessageBox.Show("cut flag");
+                        //MessageBox.Show("cut flag");
                     }
 
 
@@ -822,7 +822,7 @@ namespace PowerPoint
                 InsertControl1 insert = new InsertControl1();
                 insert.CopyPictureBox();
                 Selected.copyPictureBoxFlag = false;
-                MessageBox.Show("from home if ");
+                //MessageBox.Show("from home if ");
             }
         }
 
@@ -835,6 +835,16 @@ namespace PowerPoint
                 Selected.selectedRichTextBox.Parent.Visible = false; 
             }
 
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
 
         }
     }
